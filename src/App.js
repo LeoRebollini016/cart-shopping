@@ -1,24 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
-
+import { CartProvider } from "./context/CartContext";
+import { BrowserRouter as Router } from "react-router-dom";
+import AppRouter from "./routes/AppRouter";
+import Container from "./components/Container";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
+import { ProductProvider } from "./context/ProductContext";
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <CartProvider>
+        <ProductProvider>
+        <div className="flex flex-col min-h-screen">
+          <Header />
+          <Container>
+            <AppRouter />
+          </Container>
+          <Footer />
+        </div>
+        </ProductProvider>
+      </CartProvider>
+    </Router>
   );
 }
 
