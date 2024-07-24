@@ -14,8 +14,8 @@ const Home = () => {
   console.log(featuredProducts);
   return (
     <div>
-      <h1 className="p-4 text-2xl font-bold">Home</h1>
-      <h2 className="p-4 text-xl font-bold mb-4">Productos destacados</h2>
+      <h1 className="p-4 text-2xl font-bold mb-10">Productos destacados</h1>
+      
       <Swiper
         spaceBetween={50}
         slidesPerView={1}
